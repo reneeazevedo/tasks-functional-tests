@@ -14,6 +14,10 @@ public class TasksTest {
 
 	public WebDriver acessarAplicacao() {
 		WebDriver driver = new ChromeDriver();
+<<<<<<< HEAD
+=======
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\mypc\\dev\\java\\seleniumDrivers\\chromedriver");
+>>>>>>> 9459d82917810d8a72e6b558fa8f0a6726530c9a
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		return driver;
 	}
