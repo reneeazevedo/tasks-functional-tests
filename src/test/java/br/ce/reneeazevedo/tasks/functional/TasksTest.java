@@ -14,14 +14,12 @@ public class TasksTest {
 
 	public WebDriver acessarAplicacao() {
 		WebDriver driver = new ChromeDriver();
-		System.setProperty("webdriver.chrome.driver","C:\\Users\\mypc\\dev\\java\\seleniumDrivers\\chromedriver");
-
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		return driver;
 	}
 	@Test
 	public void deveExibirMensagemDeErro() {
-		WebDriver driver = new ChromeDriver();
+		WebDriver driver = acessarAplicacao();
 		try {
 			driver.navigate().to("http://localhost:8001/tasks/");
 			driver.findElement(By.xpath("//a[text()='Add Todo']")).click();
