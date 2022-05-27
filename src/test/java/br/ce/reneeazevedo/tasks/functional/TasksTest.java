@@ -14,14 +14,12 @@ public class TasksTest {
 
 	public WebDriver acessarAplicacao() {
 		WebDriver driver = new ChromeDriver();
-		System.setProperty("webdriver.chrome.driver","C:\\Users\\mypc\\dev\\java\\seleniumDrivers\\chromedriver.exe");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		return driver;
 	}
 	@Test
 	public void deveExibirMensagemDeErro() {
-		System.setProperty("webdriver.chrome.driver","C:\\Users\\mypc\\dev\\java\\seleniumDrivers\\chromedriver.exe");
-		WebDriver driver = acessarAplicacao();
+		WebDriver driver = new ChromeDriver();
 		try {
 			driver.navigate().to("http://localhost:8001/tasks/");
 			driver.findElement(By.xpath("//a[text()='Add Todo']")).click();
@@ -37,7 +35,6 @@ public class TasksTest {
 	}
 	@Test 
 	public void naoDeveSalvarTarefaSemDescricao() {
-		System.setProperty("webdriver.chrome.driver","C:\\Users\\mypc\\dev\\java\\seleniumDrivers\\chromedriver.exe");
 		WebDriver driver = acessarAplicacao();
 		try {
 			driver.navigate().to("http://localhost:8001/tasks/");
@@ -55,7 +52,6 @@ public class TasksTest {
 	}
 	@Test
 	public void naoDeveSalvarTarefaSemData() {
-		System.setProperty("webdriver.chrome.driver","C:\\Users\\mypc\\dev\\java\\seleniumDrivers\\chromedriver.exe");
 		WebDriver driver = acessarAplicacao();
 		try {
 			
@@ -76,7 +72,6 @@ public class TasksTest {
 	
 	@Test
 	public void naoDeveSalvarTarefaComDataPassada() {
-		System.setProperty("webdriver.chrome.driver","C:\\Users\\mypc\\dev\\java\\seleniumDrivers\\chromedriver.exe");
 		WebDriver driver = acessarAplicacao();
 		try {
 			
